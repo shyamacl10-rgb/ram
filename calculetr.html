@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html Lang ="en">
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport"content="width=device=width, initial-scale+1-0">
+<title> HTML Calculator</title>
+
+<style>
+body{
+	background:#a4a4a4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+    font-family:Arial,sans-serif;
+}
+
+.cover{
+	height:auto;
+    width:350px;
+    background:#000;
+    border-radius:30px;
+    padding:20px 15px;
+}
+
+.header{
+    width:320px;
+	height:70px;
+    margin:20px auto 10px auto;
+}
+
+input{
+    width:100%;
+    height:60px;
+    background:#006f00;
+    color:#fff;
+    font-size:35px;
+    text-align:right;
+    border:none;
+    border-radius:10px;
+    padding:0 15px;
+    box-sizing:border-box;
+}
+
+.btn{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-top:20px;
+	width:320px;
+}
+
+button{
+    height:55px;
+    border:none;
+    border-radius:10px;
+    background:#333;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:2px 2px 5px #777;
+}
+
+button:active{
+    transform:scale(0.95);
+}
+
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="header">
+<input type="text" id="display" disabled>
+</div>
+
+<div class="btn">
+
+<button onclick="display.value=''">AC</button>
+<button onclick="display.value=display.value.slice(0,-1)">⌫</button>
+<button onclick="display.value+='%'">%</button>
+<button onclick="display.value+='/'">/</button>
+
+<button onclick="display.value+='7'">7</button>
+<button onclick="display.value+='8'">8</button>
+<button onclick="display.value+='9'">9</button>
+<button onclick="display.value+='*'">*</button>
+
+<button onclick="display.value+='4'">4</button>
+<button onclick="display.value+='5'">5</button>
+<button onclick="display.value+='6'">6</button>
+<button onclick="display.value+='-'">-</button>
+
+<button onclick="display.value+='1'">1</button>
+<button onclick="display.value+='2'">2</button>
+<button onclick="display.value+='3'">3</button>
+<button onclick="display.value+='+'">+</button>
+
+<button onclick="display.value+='.'">.</button>
+<button onclick="display.value+='0'">0</button>
+<button onclick="display.value+='00'">00</button>
+<button onclick="calculate()"class="equal">=</button>
+
+</button onclick="
+try{
+display.vaule=eval (display.value);
+}
+catch{
+display.value='Error';
+}
+">=</button>
+
+</div>
+</div>
+
+</body>
+</html>
